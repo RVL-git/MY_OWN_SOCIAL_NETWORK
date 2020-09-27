@@ -1,0 +1,36 @@
+﻿<Window x:Class="SocialNetwork.LogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SocialNetwork"
+        mc:Ignorable="d"
+        Title="SOCIAL" Height="300" Width="500" WindowStartupLocation="CenterScreen" ResizeMode = "NoResize">
+    <Canvas x:Name="Field">
+        <Button x:Name = "Log" Content="LOG IN" Background="Beige" HorizontalAlignment="Left" Margin="200,191,0,0" VerticalAlignment="Top" Width="100" Height="40" FontSize="14" Click="LogClick"/>
+        <PasswordBox x:Name="Pass" HorizontalAlignment="Left" Height="30" Margin="175,137,0,0" VerticalAlignment="Top" Width="150" FontSize="16"/>
+        <TextBox x:Name="UserName"  HorizontalAlignment="Left" Height="30" Margin="175,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" FontSize="16"/>
+        <Label Content="USERNAME:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="100" FontSize="14" Canvas.Left="75" Canvas.Top="102"/>
+        <Label Content="PASSWORD:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="100"  FontSize="14" Canvas.Left="75" Canvas.Top="137"/>
+        <Image Source="C:\Users\Роман\source\repos\SocialNetwork\SocialNetwork\SNLogo.jpg" Height="60" Canvas.Left="220" Canvas.Top="10" Width="60">
+            <Image.RenderTransform>
+                <RotateTransform x:Name="rotate"
+                         CenterX="30"
+                         CenterY="30"/>
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="Image.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard >
+                            <DoubleAnimation Storyboard.TargetName="rotate"
+                                     Storyboard.TargetProperty="Angle"
+                                     From="0" To="360" Duration="0:0:1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+        <Label Content="SOCIAL" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="60" Canvas.Left="220" Canvas.Top="67" FontSize="14"/>
+    </Canvas>
+
+</Window>
